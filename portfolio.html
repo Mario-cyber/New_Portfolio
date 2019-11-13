@@ -14,6 +14,9 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- JQuery -->
   <script src="https://code.jquery.com/jquery.js"></script>
+  <!-- Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-database.js"></script>
   <!-- Java scrip link -->
   <script src="assets/javaScript/app.js"></script>
   <title>Mario's Portfolio | Welcome</title>
@@ -82,16 +85,16 @@
           </div>
           <div class="medium-6 columns">
             <label>Name
-              <input type="text" placeholder="Name">
+              <input class="contactFrom" type="text" placeholder="Name" id="name">
             </label>
             <label>Email
-              <input type="text" placeholder="Email">
+              <input class="contactFrom" type="text" placeholder="Email" id="email">
             </label>
             <label>
               Message
-              <textarea placeholder="holla at a designerd"></textarea>
+              <textarea class="contactFrom" placeholder="holla at me" id="message"></textarea>
             </label>
-            <input type="submit" class="button expanded" value="Submit">
+            <input type="submit" class="button expanded" value="Submit" id="cont_btn">
           </div>
         </div>
       </div>
