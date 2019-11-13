@@ -20,7 +20,6 @@ $(document).ready(function () {
 	let name = "";
 	let email = "";
 	let message = "";
-
 	// create an array for your projects URLS so you don't have to harcode them into HTML
 	let externalLinks = {
 		project_1: "https://mario-cyber.github.io/Train-Scheduler/",
@@ -36,19 +35,15 @@ $(document).ready(function () {
 		linkedin: "https://www.linkedin.com/in/mario-rojas/",
 
 	}
-
-
-
 	// cretae an onCLick function that obtains the id of the btn clicked
 	// create a working urls by matching the id obtained with the item in your projects object with the same key
 	// use the location.assing mwthod with your new URL to redirect to your project 
-
 	$(".thumbnail").on("click", function () {
 		let id = $(this).attr("id")
 		url = externalLinks[id]
 		location.assign(url)
 	});
-
+	// reroute user t extenal social media links (process same as with projects)
 	$(".social").on("click", function () {
 		let alt = $(this).attr("alt")
 		url = externalLinks[alt]
@@ -56,16 +51,22 @@ $(document).ready(function () {
 	});
 
 	// capture user input from "contact me form" 
-
 	$("#cont_btn").on("click", function () {
 		event.preventDefault()
 		name = $("#name").val().trim()
 		email = $("#email").val().trim()
 		message = $("#message").val().trim()
+		// create an object to store user info from contact request
+		userInfo = {
+			userName: name,
+			userEmail: email,
+			userMessage: message,
+		}
+		// upload user info onto firbase database
+		database.ref().push(userInfo);
+		// clear input values 
+		$(".contactForm").val("")
 
-		console.log(name)
-		console.log(email)
-		console.log(message)
 	})
 
 
