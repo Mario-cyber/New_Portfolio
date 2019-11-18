@@ -28,7 +28,7 @@ $(document).ready(function () {
 
 		project_3: " https://mario-cyber.github.io/Psychic-Game/",
 
-		project_4: "https://www.google.com/",
+		project_4: "https://kayhern.github.io/Project-1-Team4/",
 
 		github: "https://github.com/Mario-cyber",
 
